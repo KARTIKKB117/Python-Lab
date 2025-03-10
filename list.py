@@ -11,3 +11,4 @@ list.clear()  #clear whole list
 print(list)
 
 #slicing
+print(list[:2])
