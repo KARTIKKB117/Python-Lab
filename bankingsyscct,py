@@ -1,0 +1,31 @@
+balance = 500
+
+def check_balance():
+    print(f"Your balance is: ${balance}")
+
+def deposit(amount):
+    global balance
+    balance += amount
+    print(f"${amount} deposited. New balance: ${balance}")
+
+def withdraw(amount):
+    global balance
+    if amount > balance:
+        print("Insufficient funds!")
+    else:
+        balance -= amount
+        print(f"${amount} withdrawn. New balance: ${balance}")
+
+while True:
+    choice = input("Choose (D)eposit, (W)ithdraw, (B)alance, (E)xit: ").upper()
+    
+    if choice == "D":
+        deposit(float(input("Enter amount to deposit: ")))
+    elif choice == "W":
+        withdraw(float(input("Enter amount to withdraw: ")))
+    elif choice == "B":
+        check_balance()
+    elif choice == "E":
+        break
+    else:
+        print("Invalid option!")
