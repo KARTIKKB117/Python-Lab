@@ -1,9 +1,6 @@
-import re
+def is_palindrome_number(n):
+    return str(n) == str(n)[::-1]  # Convert number to string and check
 
-def is_palindrome(s):
-    s = re.sub(r'[^a-zA-Z0-9]', '', s.lower())  # Remove non-alphanumeric characters
-    return s == s[::-1]
+num = int(input("Enter a number: "))
 
-phrase = input("Enter a phrase: ")
-
-print("Palindrome!" if is_palindrome(phrase) else "Not a palindrome.")
+print("Palindrome!" if is_palindrome_number(num) else "Not a palindrome.")
